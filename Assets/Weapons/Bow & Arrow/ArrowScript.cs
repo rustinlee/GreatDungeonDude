@@ -23,13 +23,16 @@ public class ArrowScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {
-		if (coll.gameObject.tag == "Enemy") {
+		if (coll.gameObject.tag == "Environment" || coll.gameObject.tag == "Enemy") {
 			Destroy(rigidbody2D);
 			transform.parent = coll.transform;
-			coll.gameObject.GetComponent<EnemyScript>().DamageHP(damage);
+			
+			if (coll.gameObject.tag == "Enemy") {
+				coll.gameObject.GetComponent<EnemyScript>().DamageHP(damage);
+			}
 		}
 	}
-
+	
 	public void SetFlying() {
 		GetComponent<BoxCollider2D>().enabled = true;
 		isFlying = true;
