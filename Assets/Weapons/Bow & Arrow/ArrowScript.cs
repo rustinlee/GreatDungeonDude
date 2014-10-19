@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SwordScript1 : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+public class ArrowScript : MonoBehaviour {
+	void Start() {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void Update() {
 	
 	}
 }
