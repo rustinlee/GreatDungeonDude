@@ -10,11 +10,12 @@ public class BowScript : MonoBehaviour {
 	private Transform arrow;
 	private float timeDrawn;
 	private float reloadCounter;
+	private float arrowXOffset = 0.1f;
 
 	void SpawnArrow() {
 		arrow = Instantiate(projectile) as Transform;
 		arrow.parent = gameObject.transform;
-		arrow.localPosition = new Vector3(0.1f, 0f, 0f);
+		arrow.localPosition = new Vector3(arrowXOffset, 0f, 0f);
 		arrow.localEulerAngles = projectile.localEulerAngles;
 	}
 
@@ -37,6 +38,8 @@ public class BowScript : MonoBehaviour {
 					arrow.parent = null;
 					arrow = null;
 					reloadCounter = 0;
+				} else {
+					arrow.localPosition = new Vector3(arrowXOffset, 0f, 0f);
 				}
 
 				timeDrawn = 0;
