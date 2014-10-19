@@ -31,6 +31,7 @@ public class ArrowScript : MonoBehaviour {
 	}
 
 	public void SetFlying() {
+		GetComponent<BoxCollider2D>().enabled = true;
 		isFlying = true;
 	}
 }
