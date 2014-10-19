@@ -41,7 +41,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 400000, guid: e66b4415b5570b8459e5c72aeae4fa8c, type: 2}
+  projectileSpeed: 1
   maxDrawTime: 2
+  reloadTime: .5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

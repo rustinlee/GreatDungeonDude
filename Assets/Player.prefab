@@ -71,6 +71,7 @@ MonoBehaviour:
   speed: .0500000007
   weapons:
   - {fileID: 400000, guid: 956601fec1534814cb074cff97150f4a, type: 2}
+  - {fileID: 400000, guid: 440da6db3f4a2594fa6c9b86f01f314c, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

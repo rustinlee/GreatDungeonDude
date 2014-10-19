@@ -10,12 +10,23 @@ public class PlayerScript : MonoBehaviour {
 	private Vector3 velocity = new Vector3(0f, 0f, 0f);
 	private Animator animator;
 	private Transform weapon;
+	private int wpnIndex = 0;
+
+	void EquipWeapon(int index) {
+		if (weapon != null) {
+			Destroy(weapon.gameObject);
+		}
+
+		weapon = Instantiate(weapons[index]) as Transform;
+		weapon.parent = gameObject.transform;
+		weapon.localPosition = weapons[index].position;
+		weapon.localEulerAngles = weapons[index].eulerAngles;
+	}
 
 	void Start() {
 		animator = gameObject.GetComponent<Animator>();
 
-		weapon = Instantiate(weapons[0]) as Transform;
-		weapon.parent = gameObject.transform;
+		EquipWeapon(wpnIndex);
 	}
 	
 	void Update() {
@@ -31,6 +42,27 @@ public class PlayerScript : MonoBehaviour {
 		//movement
 		velocity.x = Input.GetAxis("Horizontal") * speed;
 		velocity.y = Input.GetAxis("Vertical") * speed;
+
+		//weapon cycling
+		if (Input.GetButtonDown("Cycle1")) {
+			wpnIndex++;
+
+			if (wpnIndex > weapons.Count - 1) {
+				wpnIndex = 0;
+			}
+
+			EquipWeapon(wpnIndex);
+		} else if (Input.GetButtonDown("Cycle2")) {
+			wpnIndex--;
+
+			if (wpnIndex < 0) {
+				wpnIndex = weapons.Count - 1;
+			}
+
+			EquipWeapon(wpnIndex);
+		}
+
+
 	}
 
 	void FixedUpdate() {
