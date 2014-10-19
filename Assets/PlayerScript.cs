@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerScript : MonoBehaviour {
 	public float speed = 2.0f;
+	public List<Transform> weapons;
 
 	private Vector3 mousePos;
 	private Vector3 velocity = new Vector3(0f, 0f, 0f);
 	private Animator animator;
+	private Transform weapon;
 
 	void Start() {
 		animator = gameObject.GetComponent<Animator>();
+
+		weapon = Instantiate(weapons[0]) as Transform;
+		weapon.parent = gameObject.transform;
 	}
 	
 	void Update() {
@@ -25,11 +31,6 @@ public class PlayerScript : MonoBehaviour {
 		//movement
 		velocity.x = Input.GetAxis("Horizontal") * speed;
 		velocity.y = Input.GetAxis("Vertical") * speed;
-
-		//fire
-		if (Input.GetButtonDown("Fire1")) {
-			animator.SetTrigger("swingSword");
-		}
 	}
 
 	void FixedUpdate() {
