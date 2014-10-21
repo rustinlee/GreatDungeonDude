@@ -6,6 +6,9 @@ public class MapGenerator : MonoBehaviour {
 	public int walkableTiles = 500;
 	public Transform wallTile;
 	public Transform groundTile;
+	public Transform playerPrefab;
+
+	private Vector2 playerSpawn;
 
 	Vector2 vec2RandomAdd(Vector2 vec2, int amt) {
 		int switchVar = Random.Range(0, 4);
@@ -194,10 +197,20 @@ public class MapGenerator : MonoBehaviour {
 				}
 			}
 		}
+
+		//set player spawn
+		playerSpawn = points[0] + new Vector2(1, 1);
 	}
 
-	void Start() {
+	void SpawnPlayer(Vector2 pos) {
+		Transform player = Instantiate(playerPrefab) as Transform;
+		player.position += new Vector3(pos.x, pos.y, 0);
+	}
+
+	void Awake() {
 		DrunkardsWalk(walkableTiles);
+		if(!GameObject.FindGameObjectWithTag("Player"))
+			SpawnPlayer(playerSpawn);
 	}
 	
 	void Update() {
