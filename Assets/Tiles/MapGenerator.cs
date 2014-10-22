@@ -7,6 +7,8 @@ public class MapGenerator : MonoBehaviour {
 	public Transform wallTile;
 	public Transform groundTile;
 	public Transform playerPrefab;
+	public List<Transform> lootTable;
+	public float lootChance;
 
 	private Vector2 playerSpawn;
 
@@ -29,6 +31,13 @@ public class MapGenerator : MonoBehaviour {
 		}
 
 		return vec2;
+	}
+
+	void SpawnLoot(Vector2 pos) {
+		int index = Random.Range(0, lootTable.Count); //exclusive for integers for some reason
+
+		Transform loot = Instantiate(lootTable[index]) as Transform;
+		loot.position += new Vector3(pos.x, pos.y, 0);
 	}
 
 	void DrunkardsWalk(int size) {
@@ -193,6 +202,9 @@ public class MapGenerator : MonoBehaviour {
 						tile = Instantiate(groundTile) as Transform;
 						tile.position = new Vector3(x, y, tile.position.z);
 						tile.parent = gameObject.transform;
+						//chance of spawning loot on walkable tiles
+						if (Random.Range(0f, 1f) < lootChance)
+							SpawnLoot(new Vector2(x, y));
 						break;
 				}
 			}
