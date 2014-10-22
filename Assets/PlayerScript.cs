@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -11,6 +13,7 @@ public class PlayerScript : MonoBehaviour {
 	private Animator animator;
 	private Transform weapon;
 	private int wpnIndex = 0;
+	private Text goldCounter;
 
 	void EquipWeapon(int index) {
 		if (weapon != null) {
@@ -25,6 +28,7 @@ public class PlayerScript : MonoBehaviour {
 
 	void Start() {
 		animator = gameObject.GetComponent<Animator>();
+		goldCounter = GameObject.Find("GoldCounter").GetComponent<Text>();
 
 		EquipWeapon(wpnIndex);
 	}
@@ -61,11 +65,18 @@ public class PlayerScript : MonoBehaviour {
 
 			EquipWeapon(wpnIndex);
 		}
-
-
 	}
 
 	void FixedUpdate() {
 		transform.position += velocity;
+	}
+
+	void OnTriggerEnter2D(Collider2D coll) {
+		if (coll.tag == "GoldPickup") {
+			int currentGold = Convert.ToInt32(goldCounter.text);
+			currentGold += coll.gameObject.GetComponent<GoldScript>().goldValue;
+			goldCounter.text = currentGold.ToString();
+			Destroy(coll.gameObject);
+		}
 	}
 }
