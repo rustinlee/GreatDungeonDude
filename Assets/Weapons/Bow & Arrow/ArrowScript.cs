@@ -4,6 +4,7 @@ using System.Collections;
 public class ArrowScript : MonoBehaviour {
 	public float TTL = 5f;
 	public int damage = 5;
+	public bool friendly = true;
 
 	private float timeAlive = 0f;
 	private bool isFlying = false;
@@ -23,12 +24,14 @@ public class ArrowScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {
-		if (coll.gameObject.tag == "Environment" || coll.gameObject.tag == "Enemy") {
+		if (coll.gameObject.tag == "Environment" || (friendly && coll.gameObject.tag == "Enemy") || (!friendly && coll.gameObject.tag == "Player")) {
 			Destroy(rigidbody2D);
 			transform.parent = coll.transform;
 			
-			if (coll.gameObject.tag == "Enemy") {
+			if (friendly && coll.gameObject.tag == "Enemy") {
 				coll.gameObject.GetComponent<EnemyScript>().DamageHP(damage);
+			} else if (!friendly && coll.gameObject.tag == "Player") {
+				//damage player
 			}
 		}
 	}

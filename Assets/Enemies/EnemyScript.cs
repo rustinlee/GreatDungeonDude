@@ -6,6 +6,7 @@ public class EnemyScript : MonoBehaviour {
 	public int maxHP = 50;
 
 	private float HP;
+	private Transform target;
 
 	//hp bar declarations
 	public Vector2 barOffset;
@@ -19,6 +20,8 @@ public class EnemyScript : MonoBehaviour {
 
 	void Start() {
 		HP = maxHP;
+
+		target = GameObject.FindGameObjectWithTag("Player").transform;
 
 		//HP_bar.padding = new RectOffset(0, 0, 0, 0);
 		emptyTex = new Texture2D(1, 1);
@@ -55,7 +58,9 @@ public class EnemyScript : MonoBehaviour {
 	}
 
 	void Update() {
-	
+		Vector3 dir = target.position - transform.position;
+		float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 	}
 
 	public void DamageHP(int amt) {
