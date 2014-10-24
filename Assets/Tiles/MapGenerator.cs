@@ -9,9 +9,12 @@ public class MapGenerator : MonoBehaviour {
 	public Transform playerPrefab;
 	public List<Transform> lootTable;
 	public float lootChance;
+	public List<Transform> enemyTable;
+	public float enemyChance;
 
 	private Vector2 playerSpawn;
 	private Transform lootHolder;
+	private Transform enemyHolder;
 
 	Vector2 vec2RandomAdd(Vector2 vec2, int amt) {
 		int switchVar = Random.Range(0, 4);
@@ -40,6 +43,20 @@ public class MapGenerator : MonoBehaviour {
 		Transform loot = Instantiate(lootTable[index]) as Transform;
 		loot.position += new Vector3(pos.x, pos.y, 0);
 		loot.parent = lootHolder;
+	}
+
+	/* 
+	 * this and SpawnLoot could be consolidated into one function,
+	 * but should a global difficulty variable be introduced,
+	 * said difficulty number would have a different effect on
+	 * each of these functions
+	 */
+	void SpawnEnemy(Vector2 pos) {
+		int index = Random.Range(0, enemyTable.Count); //exclusive for integers for some reason
+
+		Transform enemy = Instantiate(enemyTable[index]) as Transform;
+		enemy.position += new Vector3(pos.x, pos.y, 0);
+		enemy.parent = enemyHolder;
 	}
 
 	void DrunkardsWalk(int size) {
@@ -207,6 +224,9 @@ public class MapGenerator : MonoBehaviour {
 						//chance of spawning loot on walkable tiles
 						if (Random.Range(0f, 1f) < lootChance)
 							SpawnLoot(new Vector2(x, y));
+						//chance of spawning enemies on walkable tiles
+						if (Random.Range(0f, 1f) < enemyChance)
+							SpawnEnemy(new Vector2(x, y));
 						break;
 				}
 			}
@@ -223,6 +243,7 @@ public class MapGenerator : MonoBehaviour {
 
 	void Awake() {
 		lootHolder = GameObject.Find("Loot").transform;
+		enemyHolder = GameObject.Find("Enemies").transform;
 		DrunkardsWalk(walkableTiles);
 		if(!GameObject.FindGameObjectWithTag("Player"))
 			SpawnPlayer(playerSpawn);

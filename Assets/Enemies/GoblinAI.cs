@@ -64,6 +64,7 @@ public class GoblinAI : MonoBehaviour {
 					spear.parent = null;
 					spear.rigidbody2D.isKinematic = false;
 					spear.rigidbody2D.AddForce(spear.right * projectileVelocity * 5f);
+					spear.GetComponent<BoxCollider2D>().enabled = true;
 					spear.GetComponent<ArrowScript>().SetFlying();
 					spear = null;
 					throwingSpear = false;
