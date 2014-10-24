@@ -11,6 +11,7 @@ public class MapGenerator : MonoBehaviour {
 	public float lootChance;
 
 	private Vector2 playerSpawn;
+	private Transform lootHolder;
 
 	Vector2 vec2RandomAdd(Vector2 vec2, int amt) {
 		int switchVar = Random.Range(0, 4);
@@ -38,6 +39,7 @@ public class MapGenerator : MonoBehaviour {
 
 		Transform loot = Instantiate(lootTable[index]) as Transform;
 		loot.position += new Vector3(pos.x, pos.y, 0);
+		loot.parent = lootHolder;
 	}
 
 	void DrunkardsWalk(int size) {
@@ -220,6 +222,7 @@ public class MapGenerator : MonoBehaviour {
 	}
 
 	void Awake() {
+		lootHolder = GameObject.Find("Loot").transform;
 		DrunkardsWalk(walkableTiles);
 		if(!GameObject.FindGameObjectWithTag("Player"))
 			SpawnPlayer(playerSpawn);
