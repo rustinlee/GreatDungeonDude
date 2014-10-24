@@ -9,10 +9,10 @@ public class EnemyScript : MonoBehaviour {
 	private Transform target;
 
 	//hp bar declarations
-	public Vector2 barOffset;
+	public Vector2 barOffset = new Vector2(20, 30);
 	private Vector2 barPos;
 	//private GUIStyle HP_bar = new GUIStyle();
-	public Vector2 barSize = new Vector2(60, 20);
+	public Vector2 barSize = new Vector2(40, 6);
 	private Texture2D emptyTex;
 	private Texture2D fullTex;
 	private GUIStyle emptyStyle;
