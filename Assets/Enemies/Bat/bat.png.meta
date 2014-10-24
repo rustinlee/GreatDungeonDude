@@ -1,0 +1,80 @@
+fileFormatVersion: 2
+guid: 6daf391dc941b6a4aa948d30288a48fd
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: batWing_L
+    21300002: batBody
+    21300004: batWing_R
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: batWing_L
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 167
+        width: 40
+        height: 84
+      alignment: 9
+      pivot: {x: .47663182, y: .0660169721}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: batBody
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 106
+        width: 65
+        height: 56
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: batWing_R
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 12
+        width: 39
+        height: 78
+      alignment: 9
+      pivot: {x: .54793483, y: .937406957}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
