@@ -373,6 +373,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 400000, guid: 956601fec1534814cb074cff97150f4a, type: 2}
   - {fileID: 400000, guid: 440da6db3f4a2594fa6c9b86f01f314c, type: 2}
+  maxHP: 100
 --- !u!212 &55123463
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -546,7 +547,7 @@ GameObject:
   - 114: {fileID: 215038542}
   - 114: {fileID: 215038541}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: HPSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3089,6 +3090,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
+      propertyPath: healthBarSlider
+      value: 
+      objectReference: {fileID: 215038541}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
   m_RootGameObject: {fileID: 55123458}

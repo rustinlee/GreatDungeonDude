@@ -7,13 +7,26 @@ using System.Collections.Generic;
 public class PlayerScript : MonoBehaviour {
 	public float speed = 2.0f;
 	public List<Transform> weapons;
+	public int maxHP = 100;
 
 	private Vector3 mousePos;
 	private Vector3 velocity = new Vector3(0f, 0f, 0f);
-	private Animator animator;
+	//private Animator animator;
 	private Transform weapon;
 	private int wpnIndex = 0;
 	private Text goldCounter;
+	private Slider healthBarSlider;
+	private float HP;
+
+	public void DamageHP(int amt) {
+		HP -= amt;
+		
+		if (HP <= 0) {
+			//deaaaath
+		}
+
+		healthBarSlider.value = HP / maxHP;
+	}
 
 	void EquipWeapon(int index) {
 		if (weapon != null) {
@@ -27,9 +40,11 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Start() {
-		animator = gameObject.GetComponent<Animator>();
+		//animator = gameObject.GetComponent<Animator>();
+		healthBarSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
 		goldCounter = GameObject.Find("GoldCounter").GetComponent<Text>();
 
+		HP = maxHP;
 		EquipWeapon(wpnIndex);
 	}
 	

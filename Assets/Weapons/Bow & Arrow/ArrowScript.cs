@@ -31,7 +31,7 @@ public class ArrowScript : MonoBehaviour {
 			if (friendly && coll.gameObject.tag == "Enemy") {
 				coll.gameObject.GetComponent<EnemyScript>().DamageHP(damage);
 			} else if (!friendly && coll.gameObject.tag == "Player") {
-				//damage player
+				coll.gameObject.GetComponent<PlayerScript>().DamageHP(damage);
 			}
 		}
 	}

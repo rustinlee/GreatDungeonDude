@@ -39,7 +39,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 10
   m_AngularDrag: .0500000007
   m_GravityScale: 0
   m_FixedAngle: 0
@@ -88,6 +88,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 400000, guid: 956601fec1534814cb074cff97150f4a, type: 2}
   - {fileID: 400000, guid: 440da6db3f4a2594fa6c9b86f01f314c, type: 2}
+  maxHP: 100
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
