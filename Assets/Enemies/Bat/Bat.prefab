@@ -42,6 +42,7 @@ GameObject:
   - 4: {fileID: 400004}
   - 212: {fileID: 21200004}
   - 58: {fileID: 5800000}
+  - 95: {fileID: 9500000}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Untagged
@@ -98,6 +99,21 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .121807337
   m_Center: {x: .00999999978, y: 0}
+--- !u!95 &9500000
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f62cc4434c7d1743a2b3c53393df783, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
