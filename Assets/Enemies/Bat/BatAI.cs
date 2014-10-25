@@ -3,24 +3,47 @@ using System.Collections;
 
 public class BatAI : MonoBehaviour {
 	public float baseMoveSpeed = 1f;
+	public float chargeChance; //chance per second that bat will charge at target
+	public float chargeCooldown; //time spent vulnerable/recovering after charging
+	public float chargeForce;
 	public float aggroMinDist;
 	public float aggroMaxDist;
+	public int damage;
 
 	private Transform target;
 	private float moveSpeed;
 	private bool isCharging;
+	private float timeSinceCharge;
 	private float sinSpeed; //speed of sine modifier
 	private Vector2 vel;
+	private BoxCollider2D mouthCollider;
+
+	void StartCharge() {
+		vel = Vector2.zero;
+		timeSinceCharge = 0;
+		mouthCollider.enabled = true;
+		rigidbody2D.drag *= 0.5f;
+		isCharging = true;
+
+		rigidbody2D.AddForce(transform.right * chargeForce);
+	}
+
+	void StopCharge() {
+		mouthCollider.enabled = false;
+		rigidbody2D.drag *= 2f;
+		isCharging = false;
+	}
 
 	void Start() {
 		target = GameObject.FindGameObjectWithTag("Player").transform;
 		moveSpeed = baseMoveSpeed;
+		mouthCollider = gameObject.GetComponent<BoxCollider2D>();
 
-		float extraRange = Random.Range(-0.2f, 0.2f); //keeps bats from flying too similarly
+		float extraRange = Random.Range(-0.4f, 0.4f); //keeps bats from flying too similarly
 		aggroMinDist += extraRange;
 		aggroMaxDist += extraRange;
 
-		sinSpeed = Random.Range(2.0f, 3.0f);
+		sinSpeed = Random.Range(2.0f, 4.0f);
 	}
 	
 	void Update() {
@@ -34,12 +57,25 @@ public class BatAI : MonoBehaviour {
 			} else {
 				vel = Vector2.zero;
 			}
+
+			if (Random.Range(0f, 1f) < chargeChance * Time.deltaTime) {
+				StartCharge();
+			}
 		} else {
-			isCharging = false;
+			timeSinceCharge += Time.deltaTime;
+			if (timeSinceCharge > chargeCooldown)
+				StopCharge();
 		}
 	}
 
 	void FixedUpdate() {
 		rigidbody2D.velocity += vel;
+	}
+
+	void OnTriggerEnter2D(Collider2D coll) {
+		if (coll.gameObject.tag == "Player") {
+			coll.gameObject.GetComponent<PlayerScript>().DamageHP(damage);
+			StopCharge();
+		}
 	}
 }
