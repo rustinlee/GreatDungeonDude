@@ -58,9 +58,12 @@ public class PlayerScript : MonoBehaviour {
 		float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
 
+		Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+		input = Vector2.ClampMagnitude(input, 1);
+
 		//movement
-		velocity.x = Input.GetAxis("Horizontal") * speed;
-		velocity.y = Input.GetAxis("Vertical") * speed;
+		velocity.x = input.x * speed;
+		velocity.y = input.y * speed;
 
 		//weapon cycling
 		if (Input.GetButtonDown("Cycle1")) {
