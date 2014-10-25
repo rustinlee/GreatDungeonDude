@@ -316,7 +316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!58 &55123459
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bbf13f2c86ee989429f25db53b6f1722, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0fe38c219469f2b40a64e332f3b654e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &55123464
 Transform:
@@ -408,7 +408,7 @@ Transform:
   m_PrefabInternal: {fileID: 2075305322}
   m_GameObject: {fileID: 55123458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.20862055, y: .00772327837, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3255,11 +3255,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.20862055
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .00772327837
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3283,7 +3283,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5000000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
       propertyPath: m_LinearDrag
@@ -3291,12 +3291,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
       propertyPath: healthBarSlider
       value: 
       objectReference: {fileID: 215038541}
+    - target: {fileID: 21200000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0fe38c219469f2b40a64e332f3b654e2,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
   m_RootGameObject: {fileID: 55123458}
