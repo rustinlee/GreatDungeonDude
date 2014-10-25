@@ -14,7 +14,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 58: {fileID: 5800000}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player (Dungeon)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
