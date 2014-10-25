@@ -8,9 +8,10 @@ public class ArrowScript : MonoBehaviour {
 
 	private float timeAlive = 0f;
 	private bool isFlying = false;
+	private BoxCollider2D box;
 
 	void Start() {
-	
+		box = gameObject.GetComponent<BoxCollider2D>();
 	}
 
 	void Update() {
@@ -26,6 +27,7 @@ public class ArrowScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.gameObject.tag == "Environment" || (friendly && coll.gameObject.tag == "Enemy") || (!friendly && coll.gameObject.tag == "Player")) {
 			Destroy(rigidbody2D);
+			Destroy(box);
 			transform.parent = coll.transform;
 			
 			if (friendly && coll.gameObject.tag == "Enemy") {
