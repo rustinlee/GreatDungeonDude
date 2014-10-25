@@ -5,7 +5,7 @@ public class PlayerFollow : MonoBehaviour {
 	private Transform player;
 
 	void Awake() {
-		Application.targetFrameRate = -1; //throwing this here for now since it's the only camera script
+		Application.targetFrameRate = 120; //throwing this here for now since it's the only camera script
 	}
 
 	void Start () {
