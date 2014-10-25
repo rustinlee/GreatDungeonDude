@@ -1399,7 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e184b6bff6e204a9654e0a641dd63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMoveSpeed: .75
+  baseMoveSpeed: .100000001
   aggroMinDist: 1.60000002
   aggroMaxDist: 1.79999995
 --- !u!95 &497305054
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e184b6bff6e204a9654e0a641dd63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMoveSpeed: .75
+  baseMoveSpeed: .100000001
   aggroMinDist: 1.60000002
   aggroMaxDist: 1.79999995
 --- !u!95 &691977595
@@ -3261,7 +3261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e184b6bff6e204a9654e0a641dd63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMoveSpeed: .75
+  baseMoveSpeed: .100000001
   aggroMinDist: 1.60000002
   aggroMaxDist: 1.79999995
 --- !u!95 &1465060552
@@ -3530,7 +3530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e184b6bff6e204a9654e0a641dd63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMoveSpeed: .75
+  baseMoveSpeed: .100000001
   aggroMinDist: 1.60000002
   aggroMaxDist: 1.79999995
 --- !u!50 &1562417842
@@ -3916,7 +3916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 400000, guid: 17feac61751663445b43e39a00e3a3fd, type: 2}
   projectileVelocity: 50
-  baseMoveSpeed: 1.5
+  baseMoveSpeed: 1
   chargingMoveSpeedModifier: .5
   chargeTime: .5
   reloadTime: 1
@@ -4253,7 +4253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e184b6bff6e204a9654e0a641dd63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMoveSpeed: .75
+  baseMoveSpeed: .100000001
   aggroMinDist: 1.60000002
   aggroMaxDist: 1.79999995
 --- !u!95 &2069277551
@@ -4485,7 +4485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e184b6bff6e204a9654e0a641dd63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMoveSpeed: .75
+  baseMoveSpeed: .100000001
   aggroMinDist: 1.60000002
   aggroMaxDist: 1.79999995
 --- !u!95 &2146046733

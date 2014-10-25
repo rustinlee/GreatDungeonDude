@@ -17,6 +17,7 @@ public class GoblinAI : MonoBehaviour {
 	private bool throwingSpear = false;
 	private float timeCharging = 0f;
 	private float timeSinceThrown = 0f;
+	private Vector2 vel;
 
 	void SpawnSpear() {
 		spear = Instantiate(projectile) as Transform;
@@ -41,10 +42,12 @@ public class GoblinAI : MonoBehaviour {
 		float dist = Vector2.Distance(transform.position, target.position);
 
 		if (dist > aggroMaxDist) {
-			rigidbody2D.AddForce(transform.right * moveSpeed);
+			vel = transform.right * moveSpeed;
 		} else if (dist < aggroMinDist) {
-			rigidbody2D.AddForce(transform.right * -moveSpeed);
+			vel = transform.right * -moveSpeed;
 		} else {
+			vel = Vector2.zero;
+
 			if (timeSinceThrown > reloadTime && spear == null) {
 				SpawnSpear();
 				timeSinceThrown = 0f;
@@ -72,5 +75,9 @@ public class GoblinAI : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	void FixedUpdate() {
+		rigidbody2D.velocity += vel;
 	}
 }

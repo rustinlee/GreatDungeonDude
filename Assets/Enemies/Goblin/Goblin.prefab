@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 400000, guid: 17feac61751663445b43e39a00e3a3fd, type: 2}
   projectileVelocity: 50
-  baseMoveSpeed: 1.5
+  baseMoveSpeed: 1
   chargingMoveSpeedModifier: .5
   chargeTime: .5
   reloadTime: 1
