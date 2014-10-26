@@ -112,7 +112,7 @@ public class OverworldGenerator : MonoBehaviour {
 		return mapArray;
 	}
 
-	void Start () {
+	void Awake () {
 		newMap = GenerateIsland(mapDimensions);
 
 		for (var x = 0; x < newMap.Count; x++) {
@@ -130,6 +130,17 @@ public class OverworldGenerator : MonoBehaviour {
 						SpawnTile(new Vector2(y, x), dungeonEntranceTile);
 						break;
 				}
+			}
+		}
+
+		bool placingSpawn = true;
+		while (placingSpawn) {
+			int x = Random.Range(0, (int)mapDimensions.x);
+			int y = Random.Range(0, (int)mapDimensions.y);
+			if (newMap[y][x] == 'g') {
+				Vector3 pos = new Vector3(x * tileSize.x, y * tileSize.y, 0f);
+				GameObject.FindGameObjectWithTag("Player").transform.position += pos;
+				placingSpawn = false;
 			}
 		}
 	}
