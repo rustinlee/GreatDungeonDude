@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour {
 	private Text goldCounter;
 	private Slider healthBarSlider;
 	private float HP;
+	private float speedMod;
 
 	public void DamageHP(int amt) {
 		HP -= amt;
@@ -62,8 +63,9 @@ public class PlayerScript : MonoBehaviour {
 		input = Vector2.ClampMagnitude(input, 1);
 
 		//movement
-		velocity.x = input.x * speed;
-		velocity.y = input.y * speed;
+		speedMod = 1 + 0.03f * ApplicationModel.playerAgi;
+		velocity.x = input.x * speed * speedMod;
+		velocity.y = input.y * speed * speedMod;
 
 		//weapon cycling
 		if (Input.GetButtonDown("Cycle1")) {

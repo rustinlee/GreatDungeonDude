@@ -239,7 +239,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy - 30G
+  m_Text: Buy - 20G
 --- !u!222 &340457342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -437,7 +437,7 @@ GameObject:
   - 222: {fileID: 969170080}
   - 114: {fileID: 969170079}
   m_Layer: 5
-  m_Name: Text
+  m_Name: GoldCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000
+  m_Text: 
 --- !u!222 &969170080
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -629,7 +629,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1219317993}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1718270727}
+        m_MethodName: BuyStr
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1219317993
@@ -801,7 +813,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1439260884}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1718270727}
+        m_MethodName: BuyDex
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1439260884
@@ -978,7 +1002,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1630421358}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1718270727}
+        m_MethodName: BuyAgi
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1630421358
@@ -1068,7 +1104,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy - 30G
+  m_Text: Buy - 20G
 --- !u!222 &1693910102
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1187,6 +1223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177c5f22345bd4849b2ae4d163484432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldCounter: {fileID: 969170079}
+  storekeeperDialogue: {fileID: 0}
+  dialogue_notEnoughGold: 
+  dialogue_thanksForPurchase: 
 --- !u!4 &1718270728
 Transform:
   m_ObjectHideFlags: 0
@@ -1325,7 +1365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy - 30G
+  m_Text: Buy - 20G
 --- !u!222 &1759956439
 CanvasRenderer:
   m_ObjectHideFlags: 0

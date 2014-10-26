@@ -23,7 +23,9 @@ public class SwordScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.gameObject.tag == "Enemy") {
-			coll.gameObject.GetComponent<EnemyScript>().DamageHP(damage);
+			float damageMod = 1 + 0.03f * ApplicationModel.playerStr;
+			float effDamage = damage * damageMod;
+			coll.gameObject.GetComponent<EnemyScript>().DamageHP(Mathf.FloorToInt(effDamage));
 		}
 	}
 

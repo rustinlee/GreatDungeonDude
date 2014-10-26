@@ -31,7 +31,9 @@ public class ArrowScript : MonoBehaviour {
 			transform.parent = coll.transform;
 			
 			if (friendly && coll.gameObject.tag == "Enemy") {
-				coll.gameObject.GetComponent<EnemyScript>().DamageHP(damage);
+				float damageMod = 1 + 0.06f * ApplicationModel.playerDex;
+				float effDamage = damage * damageMod;
+				coll.gameObject.GetComponent<EnemyScript>().DamageHP(Mathf.FloorToInt(effDamage));
 			} else if (!friendly && coll.gameObject.tag == "Player") {
 				coll.gameObject.GetComponent<PlayerScript>().DamageHP(damage);
 			}

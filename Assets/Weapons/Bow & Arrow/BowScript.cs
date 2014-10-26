@@ -27,8 +27,10 @@ public class BowScript : MonoBehaviour {
 		if (arrow != null) {
 			if (Input.GetButton("Fire1")) {
 				if (timeDrawn <= maxDrawTime) {
-					timeDrawn += Time.deltaTime;
-					arrow.localPosition -= new Vector3(Time.deltaTime * 0.1f, 0f, 0f);
+					float timeDrawnMod = 1 + 0.03f * ApplicationModel.playerStr;
+					float effTimeDrawn = Time.deltaTime * timeDrawnMod;
+					timeDrawn += effTimeDrawn;
+					arrow.localPosition -= new Vector3(effTimeDrawn * 0.1f, 0f, 0f);
 				}
 			} else {
 				if (timeDrawn > maxDrawTime / 5) {
