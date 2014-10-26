@@ -53,8 +53,8 @@ TextureImporter:
         y: 39
         width: 127
         height: 165
-      alignment: 9
-      pivot: {x: .730860531, y: .505732059}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: boy
       rect:
@@ -63,8 +63,8 @@ TextureImporter:
         y: 43
         width: 123
         height: 150
-      alignment: 9
-      pivot: {x: .711455584, y: .50000006}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: girl
       rect:
@@ -73,8 +73,8 @@ TextureImporter:
         y: 43
         width: 133
         height: 141
-      alignment: 9
-      pivot: {x: .688445568, y: .5}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
