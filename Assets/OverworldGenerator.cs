@@ -139,6 +139,6 @@ public class OverworldGenerator : MonoBehaviour {
 	}
 
 	public char GetTile(int x, int y) {
-		return newMap[x][y];
+		return newMap[y][x];
 	}
 }
