@@ -30,8 +30,8 @@ public class OverworldGenerator : MonoBehaviour {
 		while (i < num) {
 			int x = Random.Range(0, (int)mapDimensions.x);
 			int y = Random.Range(0, (int)mapDimensions.y);
-			if (map[x][y] == 'g') {
-				map[x] = ChangeCharAtPos(map[x], y, 'd');
+			if (map[y][x] == 'g') {
+				map[y] = ChangeCharAtPos(map[y], x, 'd');
 				num--;
 			}
 		}
@@ -42,36 +42,48 @@ public class OverworldGenerator : MonoBehaviour {
 	List<string> AddOcean(List<string> map) {
 		int mapLength = map[0].Length;
 		int mapHeight = map.Count;
+		int lengthConstraint = mapLength / 5;
+		int heightContraint = mapHeight / 5;
 
 		int i;
+		int lastCount1 = 2;
+		int lastCount2 = 2;
 		int count;
 		for (i = 0; i < mapLength; i++) {
-			count = Random.Range(0, 3);
-			while (count < 3) {
-				int index = 2 - count;
+			count = lastCount1 + Random.Range(-1, 2);
+			count = Mathf.Clamp(count, 0, lengthConstraint);
+			lastCount1 = count;
+			while (count <= lengthConstraint) {
+				int index = lengthConstraint - count;
 				map[index] = ChangeCharAtPos(map[index], i, 'w');
 				count++;
 			}
 
-			count = Random.Range(0, 3);
-			while (count < 3) {
-				int index = mapLength - 1 - (2 - count);
+			count = lastCount2 + Random.Range(-1, 2);
+			count = Mathf.Clamp(count, 0, lengthConstraint);
+			lastCount2 = count;
+			while (count <= lengthConstraint) {
+				int index = mapHeight - 1 - (lengthConstraint - count);
 				map[index] = ChangeCharAtPos(map[index], i, 'w');
 				count++;
 			}
 		}
 
 		for (i = 0; i < mapHeight; i++) {
-			count = Random.Range(0, 3);
-			while (count < 3) {
-				int index = 2 - count;
+			count = lastCount1 + Random.Range(-1, 2);
+			count = Mathf.Clamp(count, 0, heightContraint);
+			lastCount1 = count;
+			while (count <= heightContraint) {
+				int index = heightContraint - count;
 				map[i] = ChangeCharAtPos(map[i], index, 'w');
 				count++;
 			}
 
-			count = Random.Range(0, 3);
-			while (count < 3) {
-				int index = mapLength - 1 - (2 - count);
+			count = lastCount2 + Random.Range(-1, 2);
+			count = Mathf.Clamp(count, 0, heightContraint);
+			lastCount2 = count;
+			while (count <= heightContraint) {
+				int index = mapLength - 1 - (heightContraint - count);
 				map[i] = ChangeCharAtPos(map[i], index, 'w');
 				count++;
 			}
@@ -108,14 +120,14 @@ public class OverworldGenerator : MonoBehaviour {
 				char symbol = newMap[x][y];
 				switch (symbol) {
 					case 'w':
-						SpawnTile(new Vector2(x, y), waterTile);
+						SpawnTile(new Vector2(y, x), waterTile);
 						break;
 					case 'g':
-						SpawnTile(new Vector2(x, y), grassTile);
+						SpawnTile(new Vector2(y, x), grassTile);
 						break;
 					case 'd':
-						SpawnTile(new Vector2(x, y), grassTile);
-						SpawnTile(new Vector2(x, y), dungeonEntranceTile);
+						SpawnTile(new Vector2(y, x), grassTile);
+						SpawnTile(new Vector2(y, x), dungeonEntranceTile);
 						break;
 				}
 			}

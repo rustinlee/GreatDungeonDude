@@ -264,7 +264,7 @@ MonoBehaviour:
   grassTile: {fileID: 400000, guid: 14e4b3e577437f64787825f073cc34f1, type: 2}
   waterTile: {fileID: 400000, guid: cf57a2774bfe88e4dabdbb5b7dbc8d2c, type: 2}
   dungeonEntranceTile: {fileID: 400000, guid: 92d2787068be1cf4aacc720b6fcbf5f4, type: 2}
-  mapDimensions: {x: 20, y: 20}
+  mapDimensions: {x: 60, y: 40}
   tileSize: {x: .5, y: .5}
   dungeons: 5
 --- !u!1001 &1420236006
