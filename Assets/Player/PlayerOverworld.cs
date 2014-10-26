@@ -2,15 +2,14 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerOverworld : MonoBehaviour {
-	public float moveCooldown;
-
 	private OverworldGenerator overworld;
-	private float timeSinceMoved = 0f;
 	private Vector2 scale;
 
 	void Start() {
 		overworld = GameObject.Find("Overworld").GetComponent<OverworldGenerator>();
 		scale = overworld.tileSize;
+		transform.localScale = new Vector3(scale.y * 2, scale.y * 2, 1); //intentionally using y for both
+		Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
 	}
 
 	void Move(Vector3 dir) {
@@ -19,6 +18,7 @@ public class PlayerOverworld : MonoBehaviour {
 		Debug.Log(tile);
 		if (tile == 'g') {
 			transform.position += dir;
+			Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
 		} else if (tile == 'd') {
 			Application.LoadLevel("dungeon");
 		}

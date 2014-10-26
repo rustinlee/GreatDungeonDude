@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 206316071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 2, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -222,7 +222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a44334a443304643bd174984d401a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveCooldown: .25
 --- !u!1 &564925376
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +265,7 @@ MonoBehaviour:
   waterTile: {fileID: 400000, guid: cf57a2774bfe88e4dabdbb5b7dbc8d2c, type: 2}
   dungeonEntranceTile: {fileID: 400000, guid: 92d2787068be1cf4aacc720b6fcbf5f4, type: 2}
   mapDimensions: {x: 20, y: 20}
-  tileSize: {x: .25, y: .25}
+  tileSize: {x: .5, y: .5}
   dungeons: 5
 --- !u!1001 &1420236006
 Prefab:
