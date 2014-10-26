@@ -91,9 +91,8 @@ public class PlayerScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.tag == "GoldPickup") {
-			int currentGold = Convert.ToInt32(goldCounter.text);
-			currentGold += coll.gameObject.GetComponent<GoldScript>().goldValue;
-			goldCounter.text = currentGold.ToString();
+			ApplicationModel.playerGold += coll.gameObject.GetComponent<GoldScript>().goldValue;
+			goldCounter.text = ApplicationModel.playerGold.ToString();
 			Destroy(coll.gameObject);
 		}
 	}
