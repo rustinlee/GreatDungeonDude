@@ -273,7 +273,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 739837307}
   m_Father: {fileID: 2131355828}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -308,6 +309,77 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 377203786}
+  m_HideIfInvisible: 0
+--- !u!1 &739837306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 739837307}
+  - 222: {fileID: 739837309}
+  - 114: {fileID: 739837308}
+  m_Layer: 5
+  m_Name: ShopkeeperDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &739837307
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739837306}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 377203787}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 15, y: -15}
+  m_SizeDelta: {x: 590, y: 100}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &739837308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739837306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'You know, this game''s security is pretty awful. I could easily hack your
+    stats for you.
+
+
+    I mean, not for free. Obviously.'
+--- !u!222 &739837309
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 739837306}
   m_HideIfInvisible: 0
 --- !u!1 &896756226
 GameObject:
@@ -1224,9 +1296,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldCounter: {fileID: 969170079}
-  storekeeperDialogue: {fileID: 0}
-  dialogue_notEnoughGold: 
-  dialogue_thanksForPurchase: 
+  storekeeperDialogue: {fileID: 739837308}
+  dialogueNotEnoughGold: "Yeah, uh... nice try, I guess.\r\n\r\nCome back with more
+    gold, dude. Seriously."
+  dialogueThanksForPurchase: Yeah, there you go. Try not to get yourself hurt.
 --- !u!4 &1718270728
 Transform:
   m_ObjectHideFlags: 0

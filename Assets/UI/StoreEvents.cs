@@ -5,8 +5,8 @@ using UnityEngine.UI;
 public class StoreEvents : MonoBehaviour {
 	public Text goldCounter;
 	public Text storekeeperDialogue;
-	public string dialogue_notEnoughGold;
-	public string dialogue_thanksForPurchase;
+	public string dialogueNotEnoughGold;
+	public string dialogueThanksForPurchase;
 
 	private int strCost = 20;
 	private int dexCost = 20;
@@ -28,8 +28,11 @@ public class StoreEvents : MonoBehaviour {
 		if (ApplicationModel.playerGold >= strCost) {
 			ApplicationModel.playerGold -= strCost;
 			goldCounter.text = ApplicationModel.playerGold.ToString();
+			storekeeperDialogue.text = dialogueThanksForPurchase;
 
 			ApplicationModel.playerStr++;
+		} else {
+			storekeeperDialogue.text = dialogueNotEnoughGold;
 		}
 	}
 
@@ -37,8 +40,11 @@ public class StoreEvents : MonoBehaviour {
 		if (ApplicationModel.playerGold >= dexCost) {
 			ApplicationModel.playerGold -= dexCost;
 			goldCounter.text = ApplicationModel.playerGold.ToString();
+			storekeeperDialogue.text = dialogueThanksForPurchase;
 
 			ApplicationModel.playerDex++;
+		} else {
+			storekeeperDialogue.text = dialogueNotEnoughGold;
 		}
 	}
 
@@ -46,8 +52,11 @@ public class StoreEvents : MonoBehaviour {
 		if (ApplicationModel.playerGold >= agiCost) {
 			ApplicationModel.playerGold -= agiCost;
 			goldCounter.text = ApplicationModel.playerGold.ToString();
+			storekeeperDialogue.text = dialogueThanksForPurchase;
 
 			ApplicationModel.playerAgi++;
+		} else {
+			storekeeperDialogue.text = dialogueNotEnoughGold;
 		}
 	}
 }
