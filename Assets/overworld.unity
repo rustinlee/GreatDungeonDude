@@ -311,3 +311,5 @@ MonoBehaviour:
   mapDimensions: {x: 70, y: 50}
   tileSize: {x: .5, y: .5}
   dungeons: 5
+  shopkeeper: {fileID: 400000, guid: 6a2a5dab6954cb047bc2ab81922de811, type: 2}
+  stores: 2

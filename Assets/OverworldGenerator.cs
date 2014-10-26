@@ -9,6 +9,8 @@ public class OverworldGenerator : MonoBehaviour {
 	public Vector2 mapDimensions;
 	public Vector2 tileSize;
 	public int dungeons;
+	public Transform shopkeeper;
+	public int stores;
 
 	private List<string> newMap;
 
@@ -130,6 +132,18 @@ public class OverworldGenerator : MonoBehaviour {
 						SpawnTile(new Vector2(y, x), dungeonEntranceTile);
 						break;
 				}
+			}
+		}
+
+		bool placingStore = true; //todo: fix redundant code
+		while (placingStore) {
+			int x = Random.Range(0, (int)mapDimensions.x);
+			int y = Random.Range(0, (int)mapDimensions.y);
+			if (newMap[y][x] == 'g') {
+				Vector3 pos = new Vector3(x * tileSize.x, y * tileSize.y, 0f);
+				Transform newShopkeeper = Instantiate(shopkeeper, pos, new Quaternion()) as Transform;
+				newMap[y] = ChangeCharAtPos(newMap[y], x, 'p');
+				placingStore = false;
 			}
 		}
 

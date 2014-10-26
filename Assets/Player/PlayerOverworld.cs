@@ -21,6 +21,8 @@ public class PlayerOverworld : MonoBehaviour {
 			Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
 		} else if (tile == 'd') {
 			Application.LoadLevel("dungeon");
+		} else if (tile == 'p') {
+			Application.LoadLevel("store");
 		}
 	}
 	
