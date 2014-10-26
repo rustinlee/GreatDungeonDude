@@ -311,12 +311,12 @@ GameObject:
   - 50: {fileID: 55123460}
   - 58: {fileID: 55123459}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player (Dungeon)
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &55123459
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3291,7 +3291,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
       propertyPath: healthBarSlider

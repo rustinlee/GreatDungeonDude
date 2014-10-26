@@ -10,6 +10,8 @@ public class OverworldGenerator : MonoBehaviour {
 	public Vector2 tileSize;
 	public int dungeons;
 
+	private List<string> newMap;
+
 	string ChangeCharAtPos(string str, int index, char character) {
 		char[] charArr = str.ToCharArray();
 		charArr[index] = character;
@@ -99,11 +101,11 @@ public class OverworldGenerator : MonoBehaviour {
 	}
 
 	void Start () {
-		List<string> map = GenerateIsland(mapDimensions);
+		newMap = GenerateIsland(mapDimensions);
 
-		for (var x = 0; x < map.Count; x++) {
-			for (var y = 0; y < map[x].Length; y++) {
-				char symbol = map[x][y];
+		for (var x = 0; x < newMap.Count; x++) {
+			for (var y = 0; y < newMap[x].Length; y++) {
+				char symbol = newMap[x][y];
 				switch (symbol) {
 					case 'w':
 						SpawnTile(new Vector2(x, y), waterTile);
@@ -122,5 +124,9 @@ public class OverworldGenerator : MonoBehaviour {
 
 	void Update () {
 	
+	}
+
+	public char GetTile(int x, int y) {
+		return newMap[x][y];
 	}
 }
