@@ -17,11 +17,13 @@ public class PlayerOverworld : MonoBehaviour {
 		char tile = overworld.GetTile((int)(newPos.x * (1 / scale.x)), (int)(newPos.y * (1 / scale.y)));
 		Debug.Log(tile);
 		if (tile == 'g') {
+			overworld.ChangeTile((int)(transform.position.x * (1 / scale.x)), (int)(transform.position.y * (1 / scale.y)), 'g');
 			transform.position += dir;
+			overworld.ChangeTile((int)(newPos.x * (1 / scale.x)), (int)(newPos.y * (1 / scale.y)), 'p');
 			Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
 		} else if (tile == 'd') {
 			Application.LoadLevel("dungeon");
-		} else if (tile == 'p') {
+		} else if (tile == 's') {
 			Application.LoadLevel("store");
 		}
 	}

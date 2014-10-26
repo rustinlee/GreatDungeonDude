@@ -12,7 +12,7 @@ public class OverworldGenerator : MonoBehaviour {
 	public Transform shopkeeper;
 	public int stores;
 
-	private List<string> newMap;
+	private List<string> mapData;
 
 	string ChangeCharAtPos(string str, int index, char character) {
 		char[] charArr = str.ToCharArray();
@@ -114,35 +114,17 @@ public class OverworldGenerator : MonoBehaviour {
 		return mapArray;
 	}
 
-	void Awake () {
-		newMap = GenerateIsland(mapDimensions);
+	List<string> initMap() {
+		List<string> newMap = GenerateIsland(mapDimensions);
 
-		for (var x = 0; x < newMap.Count; x++) {
-			for (var y = 0; y < newMap[x].Length; y++) {
-				char symbol = newMap[x][y];
-				switch (symbol) {
-					case 'w':
-						SpawnTile(new Vector2(y, x), waterTile);
-						break;
-					case 'g':
-						SpawnTile(new Vector2(y, x), grassTile);
-						break;
-					case 'd':
-						SpawnTile(new Vector2(y, x), grassTile);
-						SpawnTile(new Vector2(y, x), dungeonEntranceTile);
-						break;
-				}
-			}
-		}
+
 
 		bool placingStore = true; //todo: fix redundant code
 		while (placingStore) {
 			int x = Random.Range(0, (int)mapDimensions.x);
 			int y = Random.Range(0, (int)mapDimensions.y);
 			if (newMap[y][x] == 'g') {
-				Vector3 pos = new Vector3(x * tileSize.x, y * tileSize.y, 0f);
-				Transform newShopkeeper = Instantiate(shopkeeper, pos, new Quaternion()) as Transform;
-				newMap[y] = ChangeCharAtPos(newMap[y], x, 'p');
+				newMap[y] = ChangeCharAtPos(newMap[y], x, 's');
 				placingStore = false;
 			}
 		}
@@ -152,11 +134,52 @@ public class OverworldGenerator : MonoBehaviour {
 			int x = Random.Range(0, (int)mapDimensions.x);
 			int y = Random.Range(0, (int)mapDimensions.y);
 			if (newMap[y][x] == 'g') {
-				Vector3 pos = new Vector3(x * tileSize.x, y * tileSize.y, 0f);
-				GameObject.FindGameObjectWithTag("Player").transform.position += pos;
+				newMap[y] = ChangeCharAtPos(newMap[y], x, 'p');
 				placingSpawn = false;
 			}
 		}
+
+		return newMap;
+	}
+
+	void drawMap() {
+		for (var x = 0; x < mapData.Count; x++) {
+			for (var y = 0; y < mapData[x].Length; y++) {
+				char symbol = mapData[x][y];
+				Vector3 pos;
+				switch (symbol) {
+					case 'w': //water
+						SpawnTile(new Vector2(y, x), waterTile);
+						break;
+					case 'g': //grass
+						SpawnTile(new Vector2(y, x), grassTile);
+						break;
+					case 'd': //dungeon entrance
+						SpawnTile(new Vector2(y, x), grassTile);
+						SpawnTile(new Vector2(y, x), dungeonEntranceTile);
+						break;
+					case 's': //shop
+						SpawnTile(new Vector2(y, x), grassTile);
+						pos = new Vector3(y * tileSize.y, x * tileSize.x, 0f);
+						Transform newShopkeeper = Instantiate(shopkeeper, pos, new Quaternion()) as Transform;
+						break;
+					case 'p': //player spawn
+						SpawnTile(new Vector2(y, x), grassTile);
+						pos = new Vector3(y * tileSize.y, x * tileSize.x, 0f);
+						GameObject.FindGameObjectWithTag("Player").transform.position = pos;
+						break;
+				}
+			}
+		}
+	}
+
+	void Awake () {
+		if (ApplicationModel.overworldMap == null) {
+			ApplicationModel.overworldMap = initMap();
+		}
+
+		mapData = ApplicationModel.overworldMap;
+		drawMap();
 	}
 
 	void Update () {
@@ -164,6 +187,10 @@ public class OverworldGenerator : MonoBehaviour {
 	}
 
 	public char GetTile(int x, int y) {
-		return newMap[y][x];
+		return mapData[y][x];
+	}
+
+	public void ChangeTile(int x, int y, char c) {
+		mapData[y] = ChangeCharAtPos(mapData[y], x, c);
 	}
 }
