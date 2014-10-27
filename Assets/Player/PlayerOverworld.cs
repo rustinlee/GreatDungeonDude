@@ -6,6 +6,7 @@ public class PlayerOverworld : MonoBehaviour {
 	private Vector2 scale;
 
 	void Start() {
+		gameObject.GetComponent<SpriteRenderer>().sprite = ApplicationModel.playerSprite;
 		overworld = GameObject.Find("Overworld").GetComponent<OverworldGenerator>();
 		scale = overworld.tileSize;
 		transform.localScale = new Vector3(scale.y * 2, scale.y * 2, 1); //intentionally using y for both

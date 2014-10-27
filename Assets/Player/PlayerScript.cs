@@ -42,6 +42,7 @@ public class PlayerScript : MonoBehaviour {
 
 	void Start() {
 		//animator = gameObject.GetComponent<Animator>();
+		gameObject.GetComponent<SpriteRenderer>().sprite = ApplicationModel.playerSprite;
 		healthBarSlider = GameObject.Find("HPSlider").GetComponent<Slider>();
 		goldCounter = GameObject.Find("GoldCounter").GetComponent<Text>();
 
