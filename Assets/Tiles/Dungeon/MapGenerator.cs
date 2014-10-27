@@ -6,6 +6,7 @@ public class MapGenerator : MonoBehaviour {
 	public int walkableTiles = 500;
 	public Transform wallTile;
 	public Transform groundTile;
+	public Transform ladderPrefab;
 	public Transform playerPrefab;
 	public List<Transform> lootTable;
 	public float lootChance;
@@ -239,6 +240,8 @@ public class MapGenerator : MonoBehaviour {
 	void SpawnPlayer(Vector2 pos) {
 		Transform player = Instantiate(playerPrefab) as Transform;
 		player.position += new Vector3(pos.x, pos.y, 0);
+		Transform ladder = Instantiate(ladderPrefab) as Transform;
+		ladder.position += new Vector3(pos.x, pos.y, 0);
 	}
 
 	void Awake() {

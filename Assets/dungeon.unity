@@ -316,7 +316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &55123459
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -515,6 +515,10 @@ Prefab:
     - target: {fileID: 400000, guid: 47515d1d11fed9d44a4722b8b37b02c4, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 47515d1d11fed9d44a4722b8b37b02c4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47515d1d11fed9d44a4722b8b37b02c4, type: 2}
@@ -814,7 +818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &267208702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2308,7 +2312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1117713639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2587,6 +2591,7 @@ MonoBehaviour:
   walkableTiles: 500
   wallTile: {fileID: 400000, guid: 71da60e7cf280eb45854953b5c65c9de, type: 2}
   groundTile: {fileID: 400000, guid: aba500060a7e65c4a90c81a26e226708, type: 2}
+  ladderPrefab: {fileID: 400000, guid: 47515d1d11fed9d44a4722b8b37b02c4, type: 2}
   playerPrefab: {fileID: 400000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
   lootTable:
   - {fileID: 400000, guid: 800ad92ddc5e8824c95965b2cc3c86fc, type: 2}
@@ -2595,7 +2600,11 @@ MonoBehaviour:
   lootChance: .150000006
   enemyTable:
   - {fileID: 400000, guid: 1197ce186414e8e4aabb1f358b0e2844, type: 2}
+  - {fileID: 400000, guid: 1197ce186414e8e4aabb1f358b0e2844, type: 2}
   - {fileID: 400004, guid: f7f85859a0cbca644a6f2c5d99869a8e, type: 2}
+  - {fileID: 400004, guid: f7f85859a0cbca644a6f2c5d99869a8e, type: 2}
+  - {fileID: 400004, guid: f7f85859a0cbca644a6f2c5d99869a8e, type: 2}
+  - {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
   enemyChance: .0299999993
 --- !u!1 &1449828689
 GameObject:
@@ -2712,6 +2721,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 111ae89cd5c0daf438605f7411223ee1, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3050,6 +3063,10 @@ Prefab:
     - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}

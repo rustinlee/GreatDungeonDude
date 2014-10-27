@@ -18,6 +18,7 @@ public class PlayerScript : MonoBehaviour {
 	private Slider healthBarSlider;
 	private float HP;
 	private float speedMod;
+	private float ladderTimer;
 
 	public void DamageHP(int amt) {
 		HP -= amt;
@@ -97,8 +98,20 @@ public class PlayerScript : MonoBehaviour {
 			ApplicationModel.playerGold += coll.gameObject.GetComponent<GoldScript>().goldValue;
 			goldCounter.text = ApplicationModel.playerGold.ToString();
 			Destroy(coll.gameObject);
-		} else if (coll.tag == "Ladder") {
-			Application.LoadLevel("overworld");
+		}
+	}
+
+	void OnTriggerStay2D(Collider2D coll) {
+		if (coll.tag == "Ladder") {
+			ladderTimer += Time.deltaTime;
+			if (ladderTimer > 1)
+				Application.LoadLevel("overworld");
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D coll) {
+		if (coll.tag == "Ladder") {
+			ladderTimer = 0;
 		}
 	}
 }
