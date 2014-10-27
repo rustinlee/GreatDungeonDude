@@ -179,6 +179,15 @@ public class OverworldGenerator : MonoBehaviour {
 		}
 
 		mapData = ApplicationModel.overworldMap;
+		for (var x = 0; x < mapData.Count; x++) {
+			for (var y = 0; y < mapData[x].Length; y++) {
+				if (mapData[x][y] == 'd') {
+					mapData[x] = ChangeCharAtPos(mapData[x], y, 'g');
+				}
+			}
+		}
+
+		mapData = AddDungeons(mapData, dungeons);
 		drawMap();
 	}
 
