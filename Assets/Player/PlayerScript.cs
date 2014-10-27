@@ -19,12 +19,19 @@ public class PlayerScript : MonoBehaviour {
 	private float HP;
 	private float speedMod;
 	private float ladderTimer;
+	public GameObject deathUI;
+
+	public void Restart() {
+		ApplicationModel.ResetGame();
+		Application.LoadLevel("overworld");
+	}
 
 	public void DamageHP(int amt) {
 		HP -= amt;
 		
 		if (HP <= 0) {
-			//deaaaath
+			Time.timeScale = 0;
+			deathUI.SetActive(true);
 		}
 
 		healthBarSlider.value = HP / maxHP;
@@ -42,6 +49,9 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Start() {
+		deathUI = GameObject.FindGameObjectWithTag("DeathPopup");
+		deathUI.active = false;
+
 		//animator = gameObject.GetComponent<Animator>();
 		gameObject.GetComponent<SpriteRenderer>().sprite = ApplicationModel.playerSprite;
 		healthBarSlider = GameObject.Find("HPSlider").GetComponent<Slider>();

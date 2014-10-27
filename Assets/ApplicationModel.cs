@@ -18,4 +18,13 @@ public class ApplicationModel : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public static void ResetGame() {
+		overworldMap = null;
+
+		playerGold = 0;
+		playerStr = 4;
+		playerDex = 4;
+		playerAgi = 4;
+	}
 }
