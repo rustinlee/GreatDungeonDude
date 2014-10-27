@@ -97,6 +97,8 @@ public class PlayerScript : MonoBehaviour {
 			ApplicationModel.playerGold += coll.gameObject.GetComponent<GoldScript>().goldValue;
 			goldCounter.text = ApplicationModel.playerGold.ToString();
 			Destroy(coll.gameObject);
+		} else if (coll.tag == "Ladder") {
+			Application.LoadLevel("overworld");
 		}
 	}
 }
