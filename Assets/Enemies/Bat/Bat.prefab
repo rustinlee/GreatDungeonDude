@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e184b6bff6e204a9654e0a641dd63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMoveSpeed: .100000001
+  baseMoveSpeed: .150000006
   chargeChance: .25
   chargeCooldown: 1
   chargeForce: 200
