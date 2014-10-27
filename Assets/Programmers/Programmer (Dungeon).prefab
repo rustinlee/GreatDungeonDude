@@ -43,7 +43,7 @@ MonoBehaviour:
   talkDuration: 3
   talkCooldown: 5
   idleDialogue:
-  - God, this place smells.
+  - Where did I put my laptop...?
   - Man... where are all the babes at?
   - Honestly, you can't even get WiFi in here?
   - What are these supposed to be, goblins? Pssh.
@@ -51,6 +51,13 @@ MonoBehaviour:
   - I was told there would be Mtn Dew.
   - Where did all my Doritos go?
   - Yeah, real nice dungeon. Super glad I'm here.
+  - Do these things even *have* pathfinding?
+  - Super great AI, real impressed.
+  - What is that supposed to be, a sword?
+  - You are the lamest adventurer I have ever seen.
+  - I get the feeling this game was a rush job.
+  - Two enemies. Mind blowing variety.
+  - Who made this game? Six preschoolers?
   boxOffset: {x: -80, y: -70}
   boxSize: {x: 160, y: 60}
 --- !u!212 &21200000

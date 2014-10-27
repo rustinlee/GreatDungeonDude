@@ -477,50 +477,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1357157809}
   m_RootOrder: 3
---- !u!1001 &132618759
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-  m_RootGameObject: {fileID: 1117713638}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &209115731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,7 +2188,7 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-  m_PrefabInternal: {fileID: 132618759}
+  m_PrefabInternal: {fileID: 1622956508}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1117713641}
@@ -2250,7 +2206,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: 2ef002e816be7774996bcc1a5552670b,
     type: 2}
-  m_PrefabInternal: {fileID: 132618759}
+  m_PrefabInternal: {fileID: 1622956508}
   m_GameObject: {fileID: 1117713638}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -2260,7 +2216,7 @@ MonoBehaviour:
   talkDuration: 3
   talkCooldown: 5
   idleDialogue:
-  - God, this place smells.
+  - Where did I put my laptop...?
   - Man... where are all the babes at?
   - Honestly, you can't even get WiFi in here?
   - What are these supposed to be, goblins? Pssh.
@@ -2268,6 +2224,13 @@ MonoBehaviour:
   - I was told there would be Mtn Dew.
   - Where did all my Doritos go?
   - Yeah, real nice dungeon. Super glad I'm here.
+  - Do these things even *have* pathfinding?
+  - Super great AI, real impressed.
+  - What is that supposed to be, a sword?
+  - You are the lamest adventurer I have ever seen.
+  - I get the feeling this game was a rush job.
+  - Two enemies. Mind blowing variety.
+  - Who made this game? Six preschoolers?
   boxOffset: {x: -80, y: -70}
   boxSize: {x: 160, y: 60}
 --- !u!212 &1117713640
@@ -2275,7 +2238,7 @@ SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 21200000, guid: 2ef002e816be7774996bcc1a5552670b,
     type: 2}
-  m_PrefabInternal: {fileID: 132618759}
+  m_PrefabInternal: {fileID: 1622956508}
   m_GameObject: {fileID: 1117713638}
   m_Enabled: 1
   m_CastShadows: 0
@@ -2297,7 +2260,7 @@ SpriteRenderer:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
-  m_PrefabInternal: {fileID: 132618759}
+  m_PrefabInternal: {fileID: 1622956508}
   m_GameObject: {fileID: 1117713638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: 0}
@@ -2939,6 +2902,50 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aba500060a7e65c4a90c81a26e226708, type: 2}
   m_RootGameObject: {fileID: 1974915377}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1001 &1622956508
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2ef002e816be7774996bcc1a5552670b, type: 2}
+  m_RootGameObject: {fileID: 1117713638}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1001 &1680408585
