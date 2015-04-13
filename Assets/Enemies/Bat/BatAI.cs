@@ -22,15 +22,15 @@ public class BatAI : MonoBehaviour {
 		vel = Vector2.zero;
 		timeSinceCharge = 0;
 		mouthCollider.enabled = true;
-		rigidbody2D.drag *= 0.5f;
+		GetComponent<Rigidbody2D>().drag *= 0.5f;
 		isCharging = true;
 
-		rigidbody2D.AddForce(transform.right * chargeForce);
+		GetComponent<Rigidbody2D>().AddForce(transform.right * chargeForce);
 	}
 
 	void StopCharge() {
 		mouthCollider.enabled = false;
-		rigidbody2D.drag *= 2f;
+		GetComponent<Rigidbody2D>().drag *= 2f;
 		isCharging = false;
 	}
 
@@ -69,7 +69,7 @@ public class BatAI : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		rigidbody2D.velocity += vel;
+		GetComponent<Rigidbody2D>().velocity += vel;
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {

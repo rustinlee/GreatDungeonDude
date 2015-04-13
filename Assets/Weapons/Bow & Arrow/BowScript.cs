@@ -35,7 +35,7 @@ public class BowScript : MonoBehaviour {
 			} else {
 				if (timeDrawn > maxDrawTime / 5) {
 					Vector2 newVel = Quaternion.AngleAxis(arrow.rotation.eulerAngles.z + 90, Vector3.forward) * new Vector2(5f * projectileSpeed * timeDrawn, 0f);
-					arrow.rigidbody2D.velocity += newVel;
+					arrow.GetComponent<Rigidbody2D>().velocity += newVel;
 					arrow.GetComponent<ArrowScript>().SetFlying();
 					arrow.parent = null;
 					arrow = null;

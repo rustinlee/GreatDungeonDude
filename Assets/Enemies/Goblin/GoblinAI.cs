@@ -65,8 +65,8 @@ public class GoblinAI : MonoBehaviour {
 
 				if (timeCharging > chargeTime) {
 					spear.parent = null;
-					spear.rigidbody2D.isKinematic = false;
-					spear.rigidbody2D.AddForce(spear.right * projectileVelocity * 5f);
+					spear.GetComponent<Rigidbody2D>().isKinematic = false;
+					spear.GetComponent<Rigidbody2D>().AddForce(spear.right * projectileVelocity * 5f);
 					spear.GetComponent<BoxCollider2D>().enabled = true;
 					spear.GetComponent<ArrowScript>().SetFlying();
 					spear = null;
@@ -78,6 +78,6 @@ public class GoblinAI : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		rigidbody2D.velocity += vel;
+		GetComponent<Rigidbody2D>().velocity += vel;
 	}
 }

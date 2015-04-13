@@ -26,7 +26,7 @@ public class ArrowScript : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D coll) {
 		if (coll.gameObject.tag == "Environment" || (friendly && coll.gameObject.tag == "Enemy") || (!friendly && coll.gameObject.tag == "Player")) {
-			Destroy(rigidbody2D);
+			Destroy(GetComponent<Rigidbody2D>());
 			Destroy(box);
 			transform.parent = coll.transform;
 			
