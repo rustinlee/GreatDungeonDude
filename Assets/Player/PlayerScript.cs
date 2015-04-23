@@ -19,6 +19,7 @@ public class PlayerScript : MonoBehaviour {
 	private float HP;
 	private float speedMod;
 	private float ladderTimer;
+	private Camera renderCam;
 	public GameObject deathUI;
 
 	public void Restart() {
@@ -49,6 +50,7 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	void Start() {
+		renderCam = GameObject.FindGameObjectWithTag("RenderCamera").GetComponent<Camera>();
 		deathUI = GameObject.FindGameObjectWithTag("DeathPopup");
 		deathUI.active = false;
 
@@ -64,7 +66,7 @@ public class PlayerScript : MonoBehaviour {
 	void Update() {
 		//rotation
 		mousePos = Input.mousePosition;
-		Vector3 objectPos = Camera.main.WorldToScreenPoint(transform.position);
+		Vector3 objectPos = renderCam.WorldToScreenPoint(transform.position);
 		mousePos.x -= objectPos.x;
 		mousePos.y -= objectPos.y;
 
